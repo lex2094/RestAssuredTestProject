@@ -1,6 +1,12 @@
 package api;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+
 public class UserData {
+
+    public UserData() {
+        // Конструктор по умолчанию
+    }
 
     private Integer id;
     private String email;
