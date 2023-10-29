@@ -1,15 +1,16 @@
 package api;
 
-public class SuccessReg {
+public class SuccessReg extends Register {
 
     public SuccessReg() {
-        // Конструктор по умолчанию
+
     }
 
     private Integer id;
     public String token;
 
     public SuccessReg(int id, String token) {
+        super();
         this.id = id;
         this.token = token;
     }
