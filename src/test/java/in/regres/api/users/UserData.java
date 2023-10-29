@@ -1,4 +1,4 @@
-package api;
+package in.regres.api.users;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 

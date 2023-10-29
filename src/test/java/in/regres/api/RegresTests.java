@@ -1,5 +1,13 @@
-package api;
+package in.regres.api;
 
+import in.regres.api.colors.ColorsData;
+import in.regres.api.registration.Register;
+import in.regres.api.registration.SuccessReg;
+import in.regres.api.registration.UnSuccessReg;
+import in.regres.api.spec.Specifications;
+import in.regres.api.users.UserData;
+import in.regres.api.users.UserTime;
+import in.regres.api.users.UserTimeResponse;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -9,7 +17,7 @@ import java.util.stream.Collectors;
 
 import static io.restassured.RestAssured.given;
 
-public class RegresTest {
+public class RegresTests {
     private final static String URL = "https://reqres.in/";
 
     @Test
@@ -17,7 +25,7 @@ public class RegresTest {
         Specifications.installSpecification(Specifications.requestSpec(URL), Specifications.responseSpecOk200());
         List<UserData> users = given()
                 .when()
-                .get("api/users?page=2")
+                .get("  api/users?page=2")
                 .then().log().all()
                 .extract().body().jsonPath().getList("data", UserData.class);
 
@@ -62,7 +70,7 @@ public class RegresTest {
         UnSuccessReg unSuccessReg = given()
                 .body(user)
                 .when()
-                .post("/api/login")
+                .post("api/login")
                 .then().log().all()
                 .extract().as(UnSuccessReg.class);
         Assertions.assertEquals("Missing password", unSuccessReg.getError());

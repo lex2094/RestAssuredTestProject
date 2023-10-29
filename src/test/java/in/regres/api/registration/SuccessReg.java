@@ -1,4 +1,6 @@
-package api;
+package in.regres.api.registration;
+
+import in.regres.api.registration.Register;
 
 public class SuccessReg extends Register {
 

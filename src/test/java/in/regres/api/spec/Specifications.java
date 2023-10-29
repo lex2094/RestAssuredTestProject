@@ -1,4 +1,4 @@
-package api;
+package in.regres.api.spec;
 
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
@@ -39,5 +39,4 @@ public class Specifications {
                 .expectStatusCode(status)
                 .build();
     }
-
 }

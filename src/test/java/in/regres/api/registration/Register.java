@@ -1,4 +1,4 @@
-package api;
+package in.regres.api.registration;
 
 public class Register {
 

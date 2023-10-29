@@ -1,4 +1,4 @@
-package api;
+package in.regres.api.users;
 
 public class UserTimeResponse extends UserTime {
 
