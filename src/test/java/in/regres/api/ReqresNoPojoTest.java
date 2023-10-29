@@ -80,4 +80,17 @@ public class ReqresNoPojoTest {
         Assertions.assertEquals(4, id);
         Assertions.assertEquals("QpwL5tke4Pnpja7X4", token);
     }
+
+    @Test
+    public void unSuccessUserRegTestNoPojoWithResponse() {
+        Specifications.installSpecification(Specifications.requestSpec(URL), Specifications.responseSpecError400());
+        Map<String,String> user = new HashMap<>();
+        user.put("email", "sydney@fife");
+        given()
+                .body(user)
+                .when()
+                .post("/api/register")
+                .then().log().all()
+                .body("error", equalTo("Missing password"));
+    }
 }
